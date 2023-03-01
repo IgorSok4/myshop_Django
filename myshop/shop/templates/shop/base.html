@@ -1,0 +1,30 @@
+{% load static %}
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>{% block title %}Candle Shop{% endblock %}</title>
+        <link href="{% static "css/base.css" %}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="pasek-gorny">
+          <div class="container">
+                <a href="index.html"> <img class="logo-picture" src="shop\static\img\candle_store_logo.png" alt="Candle_store_logo"> </a>
+            <a class="logo-strona elem" href="index.html">Candle Store | Candles & Equipment</a>
+            <ul class="nav-links">
+              <li><a href="gry.html">Candles</a></li>
+              <li><a href="oferty.html">Waxes</a></li>
+              <li><a href="premiery.html">Fragrances</a></li>
+              <li><a href="kontakt.html">Accessories</a></li>
+              <li><a href="cart.html">Cart is empty</a></li>
+              <a onclick="openlog()"><button class="login-button">Login</button></a>
+            </ul>
+          </div>
+        </nav>
+        <div id="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>
