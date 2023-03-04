@@ -1,0 +1,18 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock title %}
+
+{% block content %}
+    <div class="product-detail">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+            <h1>{{ product.name }}</h1>
+            <h2><a href="{{ product.category.get_absolute_url }}">{{ product.cagetory }}</a></h2>
+            <p class="price">{{ product.price }} $ | {{ product.measure }} </p>
+            <h3>Product is {% if product.available and product.amount %}available | {{ product.amount }} piece{{ product.amount|pluralize }} {% else %} not available. {% endif %}</h3>
+                {{ product.description|linebreaks }}
+    </div>
+{% endblock content %}
+

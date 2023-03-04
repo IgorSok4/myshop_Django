@@ -27,7 +27,7 @@ class Product(models.Model):
                                  on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)
-    image = models.ImageField(upload_to='products/%Y/%m/%d',
+    image = models.ImageField(upload_to='media/products/%Y/%m/%d',
                               blank=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -38,12 +38,12 @@ class Product(models.Model):
         ('piece', u'piece'),
         ('kg', u'kg'),
         ('l', u'l'),
-        ('g1', u'500 g'),
-        ('g2', u'100 g'),
-        ('g3', u'50 g'),
-        ('ml1', u'500 ml'),
-        ('ml2', u'100 ml'),
-        ('ml3', u'50 ml'),
+        ('500 g', u'500 g'),
+        ('100 g', u'100 g'),
+        ('50 g', u'50 g'),
+        ('500 ml', u'500 ml'),
+        ('100 ml', u'100 ml'),
+        ('50 ml', u'50 ml'),
     )
     measure = models.CharField(max_length=20, choices=your_choices, null=True, blank=True)
     available = models.BooleanField(default=True)
