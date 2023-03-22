@@ -55,11 +55,11 @@ table th, table td {
 }
 
 tbody tr:nth-child(odd) {
-    background:#3b2e24;
+    background:#0e96bf;
 }
 
 tbody tr.subtotal {
-    background:#3b2e24;
+    background:#0e96bf;
 }
 
 thead th, tbody tr.total {

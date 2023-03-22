@@ -13,6 +13,11 @@
             <p class="price">{{ product.price }} $ | {{ product.measure }} </p>
             <h3>Product is {% if product.available and product.amount %}available | {{ product.amount }} piece{{ product.amount|pluralize }} {% else %} not available. {% endif %}</h3>
                 {{ product.description|linebreaks }}
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ cart_product_form }}
+                {% csrf_token %}
+                <input type="submit" value="add to cart">
+            </form>
     </div>
 {% endblock content %}
 

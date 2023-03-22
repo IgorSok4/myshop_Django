@@ -4,6 +4,7 @@ from shop.models import Product
 
 class Cart(object):
     
+    
     def __init__(self, request):
         """
         inicjalizacja koszyka na zakupy
@@ -14,6 +15,7 @@ class Cart(object):
             #zapis pustego koszyka na zakupy
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
+    
     
     def __iter__(self):
         """
